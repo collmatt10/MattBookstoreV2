@@ -12,7 +12,9 @@ class PublishersTableSeeder extends Seeder
      */
     public function run()
     {
-        $publisher = new Publisher();
+        factory(App\Publisher::class, 15)->create();
+
+        /*$publisher = new Publisher();
         $publisher->name = "O'Reilly Media";
         $publisher->address = "Sebastopal, CA, USA";
         $publisher->save();
@@ -30,6 +32,6 @@ class PublishersTableSeeder extends Seeder
         $publisher = new Publisher();
         $publisher->name = "John Wiley";
         $publisher->address = "Chicester, UK";
-        $publisher->save();
+        $publisher->save();*/
     }
 }

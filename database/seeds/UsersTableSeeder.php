@@ -50,5 +50,10 @@ class UsersTableSeeder extends Seeder
       $user->password=bcrypt('secret');
       $user->save();
       $user->roles()-> attach($role_user);
+
+      factory(App\User::class, 20)->create()->each(function($user){
+        $user->roles()->attach(Role::where('name', 'user')->first());
+
+      });
    }
 }
